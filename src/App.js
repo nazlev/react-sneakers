@@ -108,7 +108,7 @@ function App() {
       <Header openCart={() => setCartOpen(true)}/>
       
       <Routes>
-        <Route path="/"
+        <Route path="react-sneakers"
           element={<Home 
                     setSearchValue={setSearchValue}
                     searchValue={searchValue} 
@@ -118,13 +118,13 @@ function App() {
                   />}
         />
         <Route 
-          path="/favorites"
+          path="favorites"
           element={<Favorites 
                     addToCart={addToCart}
                   />}
         />
         <Route 
-          path="/orders"
+          path="orders"
           element={<Orders 
                     addToCart={addToCart}
                     addToFavorites={addToFavorites}

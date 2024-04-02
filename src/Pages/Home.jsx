@@ -35,7 +35,7 @@ const Home = ({
             <div className="contentHead">
             <h1>{searchValue ? `Search for: '${searchValue}'` : 'All sneakers'}</h1>
             <div className="contentHead__search">
-                <img height={14} width={14} src="/img/search.svg" alt="Search" />
+                <img height={14} width={14} src="img/search.svg" alt="search" />
                 <input 
                 className="contentHead__search_input" 
                 type='text' 

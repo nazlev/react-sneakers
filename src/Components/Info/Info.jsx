@@ -12,7 +12,7 @@ const Info = ({ image, title, descriptions }) => {
         <h2>{title}</h2>
         <p className={styles.cartEmpty__p}>{descriptions}</p>
         <button onClick={() => setCartOpen(false)} className={styles.basketBtn}>
-            <img className={styles.cartEmpty__arrow} src="/img/backArrow.png" alt="Back" /> Go back
+            <img className={styles.cartEmpty__arrow} src="img/backArrow.png" alt="Back" /> Go back
         </button>
     </div>
   )

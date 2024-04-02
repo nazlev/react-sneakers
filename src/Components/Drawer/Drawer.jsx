@@ -38,7 +38,7 @@ for(let i = 0; i < cartItems.length; i++) {
         <div className={styles.drawer}>
           <h2 className={styles.drawer__h2}>
             Cart 
-            <img onClick={() => setCartOpen(false)} className={styles.drawer__remove} width={32} height={32} src="/img/delete.svg" alt="Delete" />
+            <img onClick={() => setCartOpen(false)} className={styles.drawer__remove} width={32} height={32} src="img/delete.svg" alt="Delete" />
           </h2>
           <div className={styles.items}>
             {
@@ -53,7 +53,7 @@ for(let i = 0; i < cartItems.length; i++) {
                           <p className={styles.basketItem__info_p}>{obj.title}</p>
                           <b>{obj.price}$</b>
                         </div>
-                        <img onClick={() => onRemove(obj.id)} className={styles.basketItem__remove} width={32} height={32} src="/img/delete.svg" alt="Delete" />
+                        <img onClick={() => onRemove(obj.id)} className={styles.basketItem__remove} width={32} height={32} src="img/delete.svg" alt="Delete" />
                       </div>
                     )
                   }
@@ -71,13 +71,13 @@ for(let i = 0; i < cartItems.length; i++) {
                       </li>
                     </ul>
                     <button disabled={isLoading} onClick={onClickOrder} className={styles.basketBtn}>
-                      Checkout <img className={styles.basketBtn__arrow} src="/img/arrow.svg" alt="Arrow" />
+                      Checkout <img className={styles.basketBtn__arrow} src="img/arrow.svg" alt="Arrow" />
                     </button>
                   </div>
                 </div>
                 :
                   <Info 
-                    image = { isCompleted ? '/img/orderDone.png' : "/img/empty.svg" }
+                    image = { isCompleted ? 'img/orderDone.png' : "img/empty.svg" }
                     title = { isCompleted ? 'Order completed!' : 'Cart empty!' } 
                     descriptions = { isCompleted ? `Your order #${orderId} will be transferred to the deliver service soon` : 'Add at least one pair of sneakers to order' }
                   />
