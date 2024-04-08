@@ -3,6 +3,7 @@
     margin: 0;
 }
 
+
 body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -10,6 +11,8 @@ body {
     box-sizing: border-box;
     outline: none;
 }
+
+
 
 .App {
     background: #fff;
@@ -21,8 +24,6 @@ body {
 
 
 .content {
-    padding: 40px;
-
     .contentHead {
         display: flex;
         justify-content: space-between;
@@ -37,7 +38,6 @@ body {
                     border: none;
                     font-size: 16px;
                     padding: 13px;
-                    width: 150px;
                 }
             }
             
@@ -47,4 +47,111 @@ body {
 .cards {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nothing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 150px;
+    margin-bottom: 100px;
+    & img {
+        margin-bottom: 20px;
+    }
+    & span {
+        margin-top: 10px;
+        margin-bottom: 50px;
+        color: #ccc;
+    }
+}
+
+.cartEmpty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 200px;
+    width: 300px;
+        &__img {
+            margin: 30px 0;
+        }
+        &__p {
+            margin-top: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #ccc;
+        }
+        &__arrow {
+            position: absolute;
+            left: 30px;
+            top: 21px;
+            transition: transform 0.2s ease-in-out;
+        }
+}
+
+.basketBtn {
+    position: relative;
+    width: 300px;
+    height: 50px;
+    background: #96d24c;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+        &:hover {
+            background: lighten(#9DD458, 3%);
+            img {
+                transform: translateX(5px);
+            }
+        }
+        &:active {
+            background: darken(#9DD458, 10%);
+        }
+        &__arrow {
+            position: absolute;
+            right: 30px;
+            top: 21px;
+            transition: transform 0.2s ease-in-out;
+        }
+}
+
+
+
+
+
+
+@media (max-width: 767px) {
+    body {
+        overflow: hidden;
+    }
+    .content {
+        padding: 20px;
+        .contentHead__h1 {
+            font-size: 25px;
+            margin-top: 5px;
+        }
+        .contentHead__search_input {
+            width: 65px;
+        }
+    }
+}
+
+
+
+
+
+@media (min-width: 768px) {
+    .content {
+        padding: 40px;
+        .contentHead__search_input {
+            width: 150px;
+        }
+    }
 }

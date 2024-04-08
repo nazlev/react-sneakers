@@ -1,13 +1,14 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Card from '../Components/Card/Card';
+import { Link } from 'react-router-dom';
 
 const Orders = ({ addToCart, addToFavorites }) => {
   const [ orders, setOrders ] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const arrLoading = [
-    {"id":1},{"id":2},{"id":3},{"id":4},{"id":5},{"id":6},
-    {"id":7},{"id":8},{"id":9},{"id":10},{"id":11},{"id":12}
+    {"id":1},{"id":2},{"id":3},{"id":4},
+    {"id":5},{"id":6},{"id":7},{"id":8}
 ]
 
   useEffect(() =>{
@@ -24,22 +25,43 @@ const Orders = ({ addToCart, addToFavorites }) => {
   }, [])
   return (
     <div className='content'>
-        <div className="contentHead">
-          <h1>My orders</h1>
-        </div> 
+      {
+        orders.length > 0 
+        ? <>
+            <div className="contentHead">
+              <h1>My orders</h1>
+            </div> 
 
-        <div className="cards">
-        {
-          (isLoading ? arrLoading : orders).map(item =>
-              <Card 
-                loading = {isLoading}
-                key = {item.id}
-                {...item}
-              />
-            )
-        }
+            <div className="cards">
+            {
+              (isLoading ? arrLoading : orders).map(item =>
+                  <Card 
+                    loading = {isLoading}
+                    key = {item.id}
+                    {...item}
+                  />
+                )
+            }
 
-        </div>
+          </div>
+        </>
+        : 
+          <>
+            {isLoading ? "" 
+              : 
+                <div className='nothing'>
+                <img width={70} height={70} src="img/noOrders.png" alt="noOrders" />
+                <h2>No Orders :(</h2>
+                <span>Are you a beggar?</span>
+                <Link to='/'> 
+                  <button  className='basketBtn'>
+                    <img className='cartEmpty__arrow' src="img/backArrow.png" alt="Back" /> Go home
+                  </button>
+                </Link>
+                </div>
+            }
+          </>
+      }
     </div>
   )
 }

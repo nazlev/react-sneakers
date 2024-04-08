@@ -8,7 +8,7 @@ const Header = ({openCart}) => {
 
     return (
       <header>
-        <Link to='react-sneakers' className={styles.headerLink}>
+        <Link to='/' className={styles.headerLink}>
           <div className={styles.headerLeft}>
               <img className={styles.headerLeft__img} width={40} height={40} src="img/logo.png" alt="logo" />
               <div>

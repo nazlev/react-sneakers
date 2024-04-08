@@ -19,6 +19,7 @@ header {
     }
     .headerRight {
         display: flex;
+        flex-wrap: wrap;
         &__li {
             display: flex;
             list-style-type: none;

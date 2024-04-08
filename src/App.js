@@ -99,39 +99,40 @@ function App() {
       }}
     >
       <div className="App">
-    
-          <Drawer 
-            items={cartItems} 
-            onRemove={removeItemCart} 
-            opened={cartOpen}
-          />
-      <Header openCart={() => setCartOpen(true)}/>
       
-      <Routes>
-        <Route path="react-sneakers"
-          element={<Home 
-                    setSearchValue={setSearchValue}
-                    searchValue={searchValue} 
-                    addToCart={addToCart} 
-                    isLoading={isLoading}
-                    addToFavorites={addToFavorites}
-                  />}
+        <Drawer 
+          items={cartItems} 
+          onRemove={removeItemCart} 
+          opened={cartOpen}
         />
-        <Route 
-          path="favorites"
-          element={<Favorites 
-                    addToCart={addToCart}
-                  />}
-        />
-        <Route 
-          path="orders"
-          element={<Orders 
-                    addToCart={addToCart}
-                    addToFavorites={addToFavorites}
-                  />}
-        />
-      </Routes>
-    </div>
+        <Header openCart={() => setCartOpen(true)}/>
+        
+        <Routes>
+          <Route path=""
+            element={<Home 
+                      setSearchValue={setSearchValue}
+                      searchValue={searchValue} 
+                      addToCart={addToCart} 
+                      isLoading={isLoading}
+                      addToFavorites={addToFavorites}
+                    />}
+          />
+          <Route 
+            path="favorites"
+            element={<Favorites 
+                      addToCart={addToCart}
+                      isLoading={isLoading}
+                    />}
+          />
+          <Route 
+            path="orders"
+            element={<Orders 
+                      addToCart={addToCart}
+                      addToFavorites={addToFavorites}
+                    />}
+          />
+        </Routes>
+      </div>
     </AppContext.Provider>
   );
 }
